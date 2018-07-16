@@ -1,0 +1,6 @@
+<!--pages/discount/discount.wxml-->
+<view class='comment_list'>
+<!-- data="{{coupon}}" -->
+<import src="../../template/template.wxml" />
+  <template is="coupon" data="{{coupon}}"></template>
+</view>

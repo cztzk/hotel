@@ -1,0 +1,7 @@
+<import src="../../template/template.wxml" />
+<view class='product_list'>
+  <template is="productItem" data="{{productList}}"></template>
+</view>
+<view class='getmore' wx:if="{{more}}">
+<view bindtap='getmore'>加载更多</view>
+</view>

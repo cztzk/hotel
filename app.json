@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/productList/productList",
+    "pages/productDetail/productDetail",
+    "pages/date/date",
+    "pages/user/user",
+    "pages/discount/discount",
+    "pages/comment/comment",
+    "pages/order/order",
+    "pages/paying/paying",
+    "pages/settlement/settlement"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "希尔顿酒店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "images/tab_active_1.png",
+        "iconPath": "images/tab_1.png"
+      },
+      {
+        "pagePath": "pages/productList/productList",
+        "text": "产品",
+        "selectedIconPath": "images/tab_active_2.png",
+        "iconPath": "images/tab_2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "selectedIconPath": "images/tab_active_4.png",
+        "iconPath": "images/tab_4.png"
+      }
+    ]
+  }
+}

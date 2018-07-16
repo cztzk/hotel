@@ -1,0 +1,11 @@
+function getPriceFormat(value) {
+  return parseFloat(isNaN(value) ? 0 : value).toFixed(2);
+}
+function gettime(value){
+  return value.substring(0,10);
+}
+
+module.exports = {
+  getPriceFormat: getPriceFormat,
+  gettime: gettime
+}

@@ -1,0 +1,67 @@
+<!--pages/order/order.wxml-->
+<view class="weui-flex order_header" wx:for="{{basicInfo}}" wx:key="index">
+  <view class="weui-flex__item">
+    <image src='{{item.pic}}'></image>
+  </view>
+  <view class="weui-flex__item order_info">
+    <view>{{item.name}}</view>
+    <view>剩余：{{item.stores}}</view>
+    <view>
+      <text>入住时间：{{occupancy}}</text>
+      <text>离开时间：{{leave}}</text>
+    </view>
+  </view>
+</view>
+<view class='order_cont'>
+  <view class='flex flex-center rooms_box'>
+    <view>房间数(间)</view>
+    <view class='text-right'>
+      <input class='rooms' value='{{rooms}}' bindblur='roomcheck'></input>
+    </view>
+  </view>
+  <view class='flex flex-center rooms_box'>
+    <view class='discount_info'>
+      <text>优惠卷</text>
+      <text style='color:#c5c5c5'>（没有可用优惠券）</text>
+    </view>
+    <view class='text-right'>
+      <navigator style='color:#979797' url='/pages/discount/discount'>去查看</navigator>
+    </view>
+  </view>
+  <view class='msg felx flex-center'>
+    <input value='{{msg}}' placeholder='给卖家留言'></input>
+  </view>
+</view>
+<wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+<view class='product_amount'>
+  <view class='product_amount_item flex'>
+    <view>商品金额：</view>
+    <view>¥{{filter.getPriceFormat(basicInfo[0].minPrice)}}</view>
+  </view>
+  <view class='product_amount_item flex'>
+    <view>服务费：</view>
+    <view>¥{{filter.getPriceFormat(service)}}</view>
+  </view>
+  <view class='product_amount_item flex'>
+    <view>订单总计：</view>
+    <view>¥{{filter.getPriceFormat(basicInfo[0].minPrice*rooms)}}</view>
+  </view>
+</view>
+<view class='settlement_box text-center' wx:if="{{ispay}}">
+  <view class='settlement_head'>
+    <text bindtap='canpay'>取消</text>
+    确认支付
+  </view>
+  <view class='settlement_amout'>¥{{filter.getPriceFormat(basicInfo[0].minPrice*rooms)}}</view>
+  <view class='settlement_item wx  {{ischoose==1?"active":""}}' bindtap='choosefun' data-id='1'>
+    微信支付  
+  </view>
+  <view class='settlement_item zfb {{ischoose==2?"active":""}}' bindtap='choosefun' data-id='2'>
+    支付宝支付  
+  </view>
+<view class='settlement_btn' bindtap='payfun'>立即支付</view>
+</view>
+<view class='foot flex'>
+  <view>应付金额：¥{{filter.getPriceFormat(basicInfo[0].minPrice*rooms)}}</view>
+  <view class='foot_btn' bindtap='settlement'>结算</view>
+</view>

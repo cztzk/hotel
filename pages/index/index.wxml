@@ -1,0 +1,44 @@
+<swiper indicator-dots="{{indicatorDots}}" class='index_banner' indicator-active-color="#fff" autoplay="{{autoplay}}" interval="{{interval}}" circular="true" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item>
+      <image src="{{item.picUrl}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="weui-cells weui-cells_after-title comments">
+  <navigator url="/pages/comment/comment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">希尔顿酒店</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">{{comment}}条评论</view>
+  </navigator>
+</view>
+<view class='weui-flex date_box'>
+  <view class='weui-flex__item'>
+    <navigator url='/pages/date/date?isorder=false&id=null' hover-class='nav'>
+      入住时间
+      <text>{{occupancy}}</text>
+    </navigator>
+  </view>
+  <view class='weui-flex__item'>
+    <navigator url='/pages/date/date?isorder=false&id=null' hover-class='nav'>
+      离店时间
+      <text>{{leave}}</text>
+    </navigator>
+  </view>
+</view>
+<import src="../../template/template.wxml" />
+<view class='product_list'>
+  <template is="productItem" data="{{productList}}"></template>
+</view>
+<view class='facilities_box'>
+  <view>酒店设施</view>
+  <view>网络</view>
+  <view>客房WIFI免费房间内高速上网公共区WIFI免费</view>
+  <view>交通设施</view>
+  <view>免费停车场</view>
+  <view>接机服务接站服务租车服务叫车服务</view>
+  <view>休闲娱乐</view>
+  <view>室内游泳池健身室SPA棋牌室</view>
+  <view>前台服务</view>
+  <view>行李寄存24小时前台24小时大堂经理专职行李员礼宾服务免费旅游</view>
+  <view>交通图旅游票务叫醒服务</view>
+</view>

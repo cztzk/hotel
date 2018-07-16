@@ -1,0 +1,61 @@
+<!--pages/user/user.wxml-->
+<view class='user_warp' wx:if="{{islogin}}">
+  <view class='user_box'>
+    <view class='avatarUrl'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='nick'>{{userInfo.nickName}}</view>
+    <view class='user_head_btn'>
+      <text>积分</text>
+      <text>|</text>
+      <text>签到</text>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="/pages/{{item.url}}/{{item.url}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{cellList}}" wx:key="key" hover-class='nav'>
+      <view class="weui-cell__hd">
+        <view class='icon iconfont {{item.icon}}'></view>
+      </view>
+      <view class="weui-cell__bd">{{item.name}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>
+<view class='form' wx:else>
+  <view class='input_box'>
+    <label for='name'>用户名；</label>
+    <input type='text' name="name" class='name' bindblur='namecheck' placeholder='请输入用户名'></input>
+  </view>
+  <view class='input_box' wx:if="{{!login}}">
+    <label for='phone'>手机；</label>
+    <input type='text' name="phone" class='phone' bindblur="phonecheck" placeholder='请输入手机' value='13500000000'></input>
+  </view>
+  <view class='input_box'>
+    <label for='name'>密码；</label>
+    <input type='password' name="pass" class='pass' bindblur="passcheck" placeholder='请输入密码'></input>
+  </view>
+  <view class='input_box' wx:if="{{!login}}">
+    <label for='name'>重复密码：</label>
+    <input type='password' name="passes" class='passes' bindblur="passescheck" placeholder='请输入重复密码'></input>
+  </view>
+  <view class='input_box code_box' wx:if="{{!login}}">
+    <label for='code'>验证码；</label>
+    <input type='text' name="code" class='code' maxlength='4' bindblur="codecheck" placeholder='请输入验证码'></input>
+    <view class='getcode' bindtap='newcodefun'>
+      <text wx:if="{{!isgetcode}}">验证码</text>
+      <text wx:else>{{countdown}}s</text>
+    </view>
+  </view>
+  <view class='msg'>
+    {{msg}}
+  </view>
+  <view class='form_btn active' wx:if="{{!login}}">
+    <view bindtap='change'>登录</view>
+  </view>
+  <view class='form_btn active' wx:else>
+    <view bindtap='change'>注册</view>
+  </view>
+  <view class='form_btn {{ischeck?"active":""}}'>
+    <view bindtap='formbtnfun'>提交</view>
+  </view>
+</view>

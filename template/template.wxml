@@ -1,0 +1,106 @@
+<!-- 产品列表 -->
+<template name="productItem">
+  <view class='product_item flex' wx:for="{{productList}}" wx:key="key">
+    <view class='product_img'>
+      <image src='{{item.pic}}'></image>
+    </view>
+    <view class='product_info'>
+      <view> {{item.name}}</view>
+      <view>销量:{{item.numberOrders}}</view>
+      <view>¥{{item.minPrice}}</view>
+    </view>
+    <view class='product_btn flex-center flex'>
+      <navigator url='/pages/productDetail/productDetail?id={{item.id}}' hover-class='nav'>
+        预定
+      </navigator>
+    </view>
+  </view>
+</template>
+<template name="comment">
+  <view class='comment_item' wx:for="{{comment}}" wx:key="index">
+    <view class='comment_head flex flex-center'>
+      <view>
+        <image src='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIn3QWJQb1y8VkYiavrh8h7Pad9Wp2gOLC9u8zoTYCPlib9XIacLhvZDwJibMibhxAUKHibW6VELa6efAg/132'></image>
+      </view>
+      <view>k</view>
+      <wxs module="filter" src="../wxs/filter/filter.wxs"></wxs>
+      <view>{{filter.gettime(item.dateAdd)}}</view>
+    </view>
+    <view class='comment_cont flex'>
+      <view></view>
+      <view>
+        <view class='comment_cont_info'>{{item.content}}</view>
+        <view class='comment_cont_img'>
+          <image src='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIn3QWJQb1y8VkYiavrh8h7Pad9Wp2gOLC9u8zoTYCPlib9XIacLhvZDwJibMibhxAUKHibW6VELa6efAg/132'></image>
+          <image src='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIn3QWJQb1y8VkYiavrh8h7Pad9Wp2gOLC9u8zoTYCPlib9XIacLhvZDwJibMibhxAUKHibW6VELa6efAg/132'></image>
+          <image src='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIn3QWJQb1y8VkYiavrh8h7Pad9Wp2gOLC9u8zoTYCPlib9XIacLhvZDwJibMibhxAUKHibW6VELa6efAg/132'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="coupon">
+  <view class="coupon_item" wx:for="{{coupon}}" wx:key="index">
+    <view class='coupon_type flex' wx:if="{{item.type==0}}">
+      <view class='left'></view>
+      <view class='right flex'>
+        <view class='coupon_type_img'>
+          <view>减</view>
+          <view>满200</view>
+          <view>减100</view>
+        </view>
+        <view class='coupon_type_info'>
+          <view class='coupon_type_info_title'>吉之岛超市</view>
+          <view class='coupon_type_info_explain'>零门槛代金劵</view>
+          <view class='coupon_type_info_date'>有效期:2017.01.01-2017.01.10</view>
+        </view>
+      </view>
+      <view class='coupon_type_mask coupon_type_mask_1'></view>
+    </view>
+    <view class='coupon_type flex' wx:if="{{item.type==1}}">
+      <view class='left'></view>
+      <view class='right flex'>
+        <view class='coupon_type_img coupon_type_img_1'>
+          <view><text>￥</text>200</view>
+          <view>通用卷</view>
+        </view>
+        <view class='coupon_type_info'>
+          <view class='coupon_type_info_title'>吉之岛超市</view>
+          <view class='coupon_type_info_explain'>零门槛通用卷</view>
+          <view class='coupon_type_info_date'>有效期:2017.01.01-2017.01.10</view>
+        </view>
+      </view>
+      <view class='coupon_type_mask coupon_type_mask_2'></view>
+    </view>
+     <view class='coupon_type flex' wx:if="{{item.type==2}}">
+      <view class='left'></view>
+      <view class='right flex'>
+        <view class='coupon_type_img coupon_type_img_2'>
+          <view><text>￥</text>200</view>
+          <view>福利卷</view>
+        </view>
+        <view class='coupon_type_info'>
+          <view class='coupon_type_info_title'>吉之岛超市</view>
+          <view class='coupon_type_info_explain'>零门槛福利卷</view>
+          <view class='coupon_type_info_date'>有效期:2017.01.01-2017.01.10</view>
+        </view>
+      </view>
+      <view class='coupon_type_mask coupon_type_mask_3'></view>
+    </view>
+     <view class='coupon_type flex' wx:if="{{item.type==3}}">
+      <view class='left'></view>
+      <view class='right flex'>
+        <view class='coupon_type_img coupon_type_img_3'>
+          <view><text>￥</text>10000</view>
+          <view>折扣卷</view>
+        </view>
+        <view class='coupon_type_info'>
+          <view class='coupon_type_info_title'>吉之岛超市</view>
+          <view class='coupon_type_info_explain'>零门槛折扣卷</view>
+          <view class='coupon_type_info_date'>有效期:2017.01.01-2017.01.10</view>
+        </view>
+      </view>
+      <view class='coupon_type_mask coupon_type_mask_4'></view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,43 @@
+<!--pages/paying/paying.wxml-->
+<view class='payhead text-center'>
+  <image src='../../images/paySuccess.png'></image>
+</view>
+<view class='pay_bg'></view>
+<view class="weui-flex order_header" wx:for="{{basicInfo}}" wx:key="index">
+  <view class="weui-flex__item">
+    <image src='{{item.pic}}'></image>
+  </view>
+  <view class="weui-flex__item order_info">
+    <view>{{item.name}}</view>
+    <view>剩余：{{item.stores}}</view>
+    <view>
+      <text>入住时间：{{occupancy}}</text>
+      <text>离开时间：{{leave}}</text>
+    </view>
+  </view>
+</view>
+<view class='pay_info'>
+  <view class='pay_info_item flex'>
+    <view>服务费</view>
+    <view>周末需加50元</view>
+  </view>
+   <view class='pay_info_item flex'>
+    <view>实付款</view>
+    <view>￥199.00</view>
+  </view>
+   <view class='pay_info_item flex'>
+    <view>付款方式</view>
+    <view>在线支付</view>
+  </view>
+   <view class='pay_info_item flex'>
+    <view>订单号</view>
+    <view>102018042711175819131</view>
+  </view>
+   <view class='pay_info_item flex'>
+    <view>下单时间</view>
+    <view>2018-04-27  11:17</view>
+  </view>
+</view>
+<view class='paying_btn' bindtap='toindex'>
+    返回首页
+</view>

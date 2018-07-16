@@ -1,0 +1,50 @@
+/* pages/productDetail/productDetail.wxss */
+.index_banner,
+.index_banner image{
+  width: 750rpx;
+  height: 400rpx;
+}
+.comments{
+  font-size: 38rpx;
+}
+.date_box{
+  font-size: 30rpx;
+}
+.date_box>view{
+  width: 50%;
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  border-right: 1rpx solid #c3c3c3;
+}
+.date_box>view:nth-child(2){
+  border-right: none;
+  border-left: 1rpx solid #c3c3c3;
+}
+.date_box>view text{
+  padding-left: 10rpx;
+}
+.facilities_box{
+  background:#fff;
+  padding: 30rpx 20rpx; 
+}
+.facilities_box>view{
+  font-size: 30rpx;
+  color: #686868;
+  padding-top: 5rpx;
+}
+.facilities_box>view:nth-child(1){
+ font-size: 40rpx;
+  color: #b2b2b2;
+  padding-bottom: 5rpx;
+}
+.reservation_btn{
+  padding: 15rpx 20rpx;
+}
+.reservation_btn button{
+  padding: 15rpx 0;
+  line-height: 2;
+  font-size: 30rpx;
+}
